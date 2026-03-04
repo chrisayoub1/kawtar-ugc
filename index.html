@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kawtar Lamzihri - Créatrice de contenu UGC. Boostez votre marque avec du contenu authentique et créatif.">
+    <meta name="keywords" content="UGC, créatrice de contenu, marketing, vidéo, photographie, Maroc, Kénitra">
+    <meta name="author" content="Kawtar Lamzihri">
+    <title>Kawtar Lamzihri | Créatrice de Contenu UGC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#FAF7F2',
+                        fg: '#1A1A1A',
+                        accent: '#C67B5C',
+                        'accent-dark': '#A85D3F',
+                        muted: '#6B6B6B',
+                        card: '#FFFFFF',
+                        border: '#E8E4DF',
+                        warm: '#F5EDE4'
+                    },
+                    fontFamily: {
+                        display: ['Cormorant Garamond', 'serif'],
+                        sans: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg: #FAF7F2;
+            --fg: #1A1A1A;
+            --accent: #C67B5C;
+            --accent-dark: #A85D3F;
+            --muted: #6B6B6B;
+            --card: #FFFFFF;
+            --border: #E8E4DF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--fg);
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Animated Background */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #C67B5C33, #D4A57433);
+            top: -200px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #E8C4A833, #C67B5C22);
+            bottom: -100px;
+            left: -100px;
+            animation-delay: -7s;
+        }
+
+        .blob-3 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #D4A57422, #E8C4A833);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -14s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(20px, 30px) scale(1.02); }
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link:focus::after {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.2));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(198, 123, 92, 0.5);
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        .btn-primary:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--fg);
+            color: var(--fg);
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            background: transparent;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--fg);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary:focus-visible {
+            outline: 2px solid var(--fg);
+            outline-offset: 3px;
+        }
+
+        /* Portfolio Cards */
+        .portfolio-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .portfolio-card img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .portfolio-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26, 26, 26, 0.95) 0%, rgba(26, 26, 26, 0.3) 50%, rgba(26, 26, 26, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .portfolio-card:hover .portfolio-info {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .portfolio-badge {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: rgba(255,255,255,0.95);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover .portfolio-badge {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 20px 50px -20px rgba(198, 123, 92, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--accent), #D4A574);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Skill Bars */
+        .skill-bar {
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), #D4A574);
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .skill-progress.animate {
+            width: var(--progress);
+        }
+
+        /* Testimonial */
+        .testimonial-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 6rem;
+            line-height: 1;
+            color: var(--accent);
+            opacity: 0.2;
+            position: absolute;
+            top: 0.5rem;
+            left: 1.5rem;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 12px;
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .lightbox.active img {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--fg);
+            transition: all 0.3s ease;
+        }
+
+        .hamburger span:nth-child(1) { top: 0; }
+        .hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        .hamburger span:nth-child(3) { bottom: 0; }
+
+        .hamburger.active span:nth-child(1) {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            bottom: 50%;
+            transform: translateY(50%) rotate(-45deg);
+        }
+
+        /* Noise Overlay */
+        .noise-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Featured Work Section */
+        .featured-work {
+            position: relative;
+            padding: 4rem 0;
+        }
+
+        .featured-item {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        @media (min-width: 1024px) {
+            .featured-item {
+                grid-template-columns: 1fr 1fr;
+                gap: 5rem;
+            }
+
+            .featured-item:nth-child(even) .featured-image {
+                order: 2;
+            }
+
+            .featured-item:nth-child(even) .featured-content {
+                order: 1;
+            }
+        }
+
+        .featured-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px -20px rgba(0,0,0,0.2);
+        }
+
+        .featured-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 60%, rgba(198, 123, 92, 0.1) 100%);
+            pointer-events: none;
+        }
+
+        .featured-image-wrapper img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .featured-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .featured-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--accent);
+            opacity: 0.15;
+            line-height: 1;
+            position: absolute;
+            top: -1rem;
+            left: -1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-md border-b border-border">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="font-display text-2xl font-bold text-fg">Kawtar</a>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#apropos" class="nav-link text-muted hover:text-fg transition-colors">A propos</a>
+                <a href="#portfolio" class="nav-link text-muted hover:text-fg transition-colors">Portfolio</a>
+                <a href="#services" class="nav-link text-muted hover:text-fg transition-colors">Services</a>
+                <a href="#contact" class="btn-primary text-sm">Contactez-moi</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <div class="hamburger md:hidden" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu md:hidden" id="mobileMenu">
+        <a href="#apropos" class="font-display text-3xl text-fg hover:text-accent transition-colors">A propos</a>
+        <a href="#portfolio" class="font-display text-3xl text-fg hover:text-accent transition-colors">Portfolio</a>
+        <a href="#services" class="font-display text-3xl text-fg hover:text-accent transition-colors">Services</a>
+        <a href="#contact" class="font-display text-3xl text-fg hover:text-accent transition-colors">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen relative flex items-center pt-20">
+        <div class="hero-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-accent font-medium tracking-wide mb-4 reveal">Créatrice de contenu UGC</p>
+                <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-fg leading-tight mb-6 reveal reveal-delay-1">
+                    Kawtar Lamzihri
+                </h1>
+                <p class="text-xl md:text-2xl text-muted mb-8 reveal reveal-delay-2">
+                    Boostez votre marque avec du contenu authentique et créatif
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center reveal reveal-delay-3">
+                    <a href="#contact" class="btn-primary">Contactez-moi</a>
+                    <a href="#portfolio" class="btn-secondary">Voir mes travaux</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Work Section -->
+    <section id="portfolio" class="py-24 bg-warm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-accent font-medium tracking-wide mb-4">Mes Réalisations</p>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-fg mb-6">
+                    Portfolio
+                </h2>
+                <p class="text-muted text-lg max-w-2xl mx-auto">
+                    Découvrez mes projets récents en création de contenu UGC
+                </p>
+            </div>
+
+            <div class="featured-work">
+                <!-- Featured Item 1 -->
+                <div class="featured-item reveal">
+                    <div class="featured-image">
+                        <div class="featured-image-wrapper cursor-pointer" data-image="https://z-cdn-media.chatglm.cn/files/cf6e276a-b57f-4a45-a29d-4e86b0a78caf.jpg?auth_key=1872665435-4a19f771b31241b49b246478f1a47e66-0-79b6675147211a84e11c1c992e937bdf">
+                            <img src="https://z-cdn-media.chatglm.cn/files/cf6e276a-b57f-4a45-a29d-4e86b0a78caf.jpg?auth_key=1872665435-4a19f771b31241b49b246478f1a47e66-0-79b6675147211a84e11c1c992e937bdf" 
+                                 alt="Aura Skincare - Photographie produit" 
+                                 class="w-full aspect-[4/5] object-cover">
+                        </div>
+                    </div>
+                    <div class="featured-content relative">
+                        <span class="featured-number">01</span>
+                        <span class="inline-block px-4 py-1.5 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">Photographie Produit</span>
+                        <h3 class="font-display text-3xl md:text-4xl font-bold text-fg mb-4">Aura Skincare</h3>
+                        <p class="text-muted text-lg leading-relaxed mb-6">
+                            Photographie produit et contenu lifestyle pour une marque de soins hydratants. 
+                            Mise en valeur des produits dans un écrin de douceur avec un éclairage naturel 
+                            et des compositions raffinées.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-card border border-border rounded-full text-sm text-muted">Photographie</span>
+                            <span class="px-3 py-1 bg-card border border-border rounded-full text-sm text-muted">Lifestyle</span>
+                            <span class="px-3 py-1 bg-card border border-border rounded-full text-sm text-muted">Skincare</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Item 2 -->
+                <div class="featured-item reveal">
+                    <div class="featured-image">
+                        <div class="featured-image-wrapper cursor-pointer" data-image="https://z-cdn-media.chatglm.cn/files/9a4a274d-a129-4e25-8bb9-3139eb53d509.jpg?auth_key=1872665435-2d9b698c86a74267bf4914dad2857692-0-ac9233a66e7a943b29c092e47d3a8329">
+                            <img src="https://z-cdn-media.chatglm.cn/files/9a4a274d-a129-4e25-8bb9-3139eb53d509.jpg?auth_key=1872665435-2d9b698c86a74267bf4914dad2857692-0-ac9233a66e7a943b29c092e47d3a8329" 
+                                 alt="Botanical Hydrate - Contenu lifestyle" 
+                                 class="w-full aspect-[4/5] object-cover">
+                        </div>
+                    </div>
+                    <div class="featured-content relative">
+                        <span class="featured-number">02</span>
+                        <span class="inline-block px-4 py-1.5 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">Contenu Lifestyle</span>
+                        <h3 class="font-display text-3xl md:text-4xl font-bold text-fg mb-4">Botanical Hydrate</h3>
+                        <p class="text-muted text-lg leading-relaxed mb-6">
+                            Création de contenu lifestyle authentique pour une marque de soins naturels. 
+                            Ambiance chaleureuse et cocooning pour souligner l'aspect naturel et apaisant des produits.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-card border border-border rounded-full text-sm text-muted">UGC</span>
+                            <span class="px-3 py-1 bg-card border border-border rounded-full text-sm text-muted">Lifestyle</span>
+                            <span class="px-3 py-1 bg-card border border-border rounded-full text-sm text-muted">Naturel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Item 3 -->
+                <div class="featured-item reveal" style="border-bottom: none;">
+                    <div class="featured-image">
+                        <div class="featured-image-wrapper cursor-pointer" data-image="https://z-cdn-media.chatglm.cn/files/adf8dd0e-c76a-4fa3-b57a-81c8fa26566c.jpg?auth_key=1872665435-e2ab753bbb55416b9c2e4354e833ca7b-0-20ccc9dae133343d39c215ebda34f9c4">
+                            <img src="https://z-cdn-media.chatglm.cn/files/adf8dd0e-c76a-4fa3-b57a-81c8fa26566c.jpg?auth_key=1872665435-e2ab753bbb55416b9c2e4354e833ca7b-0-20ccc9dae133343d39c215ebda34f9c4" 
+                                 alt="Application Mobile - UGC Tech" 
+                                 class="w-full aspect-[4/5] object-cover">
+                        </div>
+                    </div>
+                    <div class="featured-content relative">
+                        <span class="featured-number">03</span>
+                        <span class="inline-block px-4 py-1.5 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4">UGC Tech</span>
+                        <h3 class="font-display text-3xl md:text-4xl font-bold text-fg mb-4">Application Lifestyle</h3>
+                        <p class="text-muted text-lg leading-relaxed mb-6">
+                            Contenu UGC pour une application mobile lifestyle. Scénario en environnement 
+                            extérieur et social pour illustrer l'usage quotidien de l'application de manière naturelle.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-card border border-border rounded-full text-sm text-muted">UGC</span>
+                            <span class="px-3 py-1 bg-card border border-border rounded-full text-sm text-muted">App Mobile</span>
+                            <span class="px-3 py-1 bg-card border border-border rounded-full text-sm text-muted">Social</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <p class="text-accent font-medium tracking-wide mb-4">A propos de moi</p>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-fg mb-6">
+                        Passionnée par la création de contenu authentique
+                    </h2>
+                    <p class="text-muted text-lg leading-relaxed mb-6">
+                        Je suis Kawtar Lamzihri, créatrice de contenu UGC basée à Kénitra, au Maroc. 
+                        Avec une passion pour le storytelling visuel, je crée du contenu authentique 
+                        qui résonne avec les audiences et amplifie la présence en ligne des marques.
+                    </p>
+                    <p class="text-muted text-lg leading-relaxed mb-8">
+                        Mon approche combine créativité, authenticité et expertise technique pour 
+                        transformer vos produits et services en contenus engageants qui convertissent.
+                    </p>
+                    
+                    <!-- Skills -->
+                    <div class="space-y-6">
+                        <div class="skill-item" data-progress="95">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-fg">Créativité</span>
+                                <span class="text-accent font-medium">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-progress="90">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-fg">Storytelling</span>
+                                <span class="text-accent font-medium">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-progress="88">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-fg">Photographie</span>
+                                <span class="text-accent font-medium">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-progress="92">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-fg">Montage Vidéo</span>
+                                <span class="text-accent font-medium">92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--progress: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal reveal-delay-2">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-card rounded-2xl p-8 text-center border border-border">
+                            <p class="font-display text-5xl font-bold text-accent mb-2">50+</p>
+                            <p class="text-muted">Projets réalisés</p>
+                        </div>
+                        <div class="bg-card rounded-2xl p-8 text-center border border-border">
+                            <p class="font-display text-5xl font-bold text-accent mb-2">30+</p>
+                            <p class="text-muted">Clients satisfaits</p>
+                        </div>
+                        <div class="bg-card rounded-2xl p-8 text-center border border-border">
+                            <p class="font-display text-5xl font-bold text-accent mb-2">2+</p>
+                            <p class="text-muted">Années d'expérience</p>
+                        </div>
+                        <div class="bg-card rounded-2xl p-8 text-center border border-border">
+                            <p class="font-display text-5xl font-bold text-accent mb-2">1M+</p>
+                            <p class="text-muted">Vues générées</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-warm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-accent font-medium tracking-wide mb-4">Mes Services</p>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-fg mb-6">
+                    Ce que je vous propose
+                </h2>
+                <p class="text-muted text-lg max-w-2xl mx-auto">
+                    Des services complets pour booster votre présence en ligne avec du contenu authentique
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-icon">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-fg mb-3">Vidéos UGC</h3>
+                    <p class="text-muted">
+                        Création de vidéos UGC authentiques et engageantes pour vos réseaux sociaux
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card reveal reveal-delay-2">
+                    <div class="service-icon">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-fg mb-3">Photographie</h3>
+                    <p class="text-muted">
+                        Photographie produit et lifestyle pour mettre en valeur vos créations
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card reveal reveal-delay-3">
+                    <div class="service-icon">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-fg mb-3">Montage & Retouche</h3>
+                    <p class="text-muted">
+                        Montage vidéo professionnel et retouche photo pour un rendu impeccable
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card reveal reveal-delay-4">
+                    <div class="service-icon">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-fg mb-3">Gestion de Contenu</h3>
+                    <p class="text-muted">
+                        Gestion complète de contenu pour vos campagnes marketing
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-accent font-medium tracking-wide mb-4">Témoignages</p>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-fg mb-6">
+                    Ce que disent mes clients
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <p class="text-muted mb-6 relative z-10">
+                        "Kawtar a transformé notre présence sur les réseaux sociaux. Son contenu authentique a considérablement augmenté notre engagement."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                            <span class="font-display font-bold text-accent">SA</span>
+                        </div>
+                        <div>
+                            <p class="font-medium text-fg">Sarah Amrani</p>
+                            <p class="text-sm text-muted">Fondatrice, Bloom Cosmetics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <p class="text-muted mb-6 relative z-10">
+                        "Un vrai talent pour le storytelling ! Les vidéos UGC créées pour notre marque ont dépassé toutes nos attentes."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                            <span class="font-display font-bold text-accent">YM</span>
+                        </div>
+                        <div>
+                            <p class="font-medium text-fg">Youssef Mansouri</p>
+                            <p class="text-sm text-muted">Directeur Marketing, TechStart</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal reveal-delay-3">
+                    <p class="text-muted mb-6 relative z-10">
+                        "Professionnalisme, créativité et réactivité. Kawtar est une partenaire de choix pour tout projet de contenu."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                            <span class="font-display font-bold text-accent">FB</span>
+                        </div>
+                        <div>
+                            <p class="font-medium text-fg">Fatima Bennani</p>
+                            <p class="text-sm text-muted">CEO, Mode & Style</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-warm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12 reveal">
+                    <p class="text-accent font-medium tracking-wide mb-4">Contactez-moi</p>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-fg mb-6">
+                        Travaillons ensemble
+                    </h2>
+                    <p class="text-muted text-lg">
+                        Vous avez un projet en tête ? N'hésitez pas à me contacter pour en discuter !
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 reveal reveal-delay-1">
+                    <div class="bg-card rounded-2xl p-6 border border-border flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-medium text-fg mb-1">Nom et prénom</p>
+                            <p class="text-muted">Kawtar Lamzihri</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-card rounded-2xl p-6 border border-border flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-medium text-fg mb-1">Téléphone</p>
+                            <a href="tel:0669382141" class="text-accent hover:underline">06 69 38 21 41</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-card rounded-2xl p-6 border border-border flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-medium text-fg mb-1">Email</p>
+                            <a href="mailto:kawtarlamzihri5@gmail.com" class="text-accent hover:underline break-all">kawtarlamzihri5@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-card rounded-2xl p-6 border border-border flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-medium text-fg mb-1">Adresse</p>
+                            <p class="text-muted text-sm">110 Avenue Moulay Abdellah, Résidence Ghita, Appartement 15, Kénitra</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-fg text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-6">
+                    <a href="#" class="font-display text-2xl font-bold">Kawtar</a>
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors" aria-label="TikTok">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors" aria-label="YouTube">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-white/60 text-sm mb-2">
+                        © 2026 Kawtar Lamzihri – Tous droits réservés
+                    </p>
+                    <p class="text-white/40 text-xs">
+                        Design by <a href="https://www.fikrago.com/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Fikrago</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image en plein écran">
+        <button class="lightbox-close" aria-label="Fermer">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <img src="" alt="Image en plein écran" id="lightboxImage">
+    </div>
+
+    <script>
+        // Initialize all variables first
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+        const skillBars = document.querySelectorAll('.skill-progress');
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        hamburger.addEventListener('click', toggleMobileMenu);
+        hamburger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMobileMenu();
+            }
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Scroll Reveal with IntersectionObserver
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Skill Bars Animation
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        skillBars.forEach(bar => skillObserver.observe(bar));
+
+        // Lightbox Functionality
+        function openLightbox(imageSrc) {
+            if (!imageSrc) return;
+            lightboxImage.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                lightboxImage.src = '';
+            }, 300);
+        }
+
+        // Featured images lightbox
+        const featuredImages = document.querySelectorAll('.featured-image-wrapper');
+        featuredImages.forEach(wrapper => {
+            wrapper.addEventListener('click', () => {
+                const imageSrc = wrapper.dataset.image;
+                if (imageSrc) {
+                    openLightbox(imageSrc);
+                }
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for blobs
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const blobs = document.querySelectorAll('.blob');
+                    blobs.forEach((blob, index) => {
+                        const speed = (index + 1) * 0.05;
+                        blob.style.transform = `translateY(${scrolled * speed}px)`;
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+</body>
+</html>
